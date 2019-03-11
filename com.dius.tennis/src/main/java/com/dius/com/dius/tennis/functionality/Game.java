@@ -28,9 +28,12 @@ public class Game {
 	private static String validateDuceState(Player player1, Player player2,
 			int player1Points, int player2Points, String scoreString) {
 		if (player1Points != player2Points) {
-			scoreString += "Advantage "
-					+ ((player1Points > player2Points) ? player1.getName()
-							: player2.getName());
+			int diff = Math.abs(player1Points - player2Points);
+			if (diff == 1) {
+				scoreString += "Advantage "
+						+ ((player1Points > player2Points) ? player1.getName()
+								: player2.getName());
+			}
 		} else {
 			scoreString = "Deuce";
 		}
