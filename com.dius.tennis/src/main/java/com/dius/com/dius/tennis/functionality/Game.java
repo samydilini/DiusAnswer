@@ -51,4 +51,9 @@ public class Game {
 		}
 		return scoreString;
 	}
+
+	public static String getTieBreakerScore(List<Player> playersList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -46,7 +46,8 @@ public class Match {
 		playersList = players.values().stream().map(p -> p)
 				.collect(Collectors.toList());
 		Collections.reverse(playersList);
-		String scoreString = Game.getScore(playersList);
+		String scoreString = !tieBreaker ? Game.getScore(playersList) : Game
+				.getTieBreakerScore(playersList);
 		return scoreString;
 	}
 

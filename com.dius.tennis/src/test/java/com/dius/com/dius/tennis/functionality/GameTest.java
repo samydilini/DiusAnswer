@@ -86,6 +86,19 @@ public class GameTest {
 		playersList.add(p2);
 		assertEquals("0-1", Game.getScore(playersList));
 	}
+	
+	@Test
+	public void testTieBreakerScore() {
+		List<Player> playersList = new ArrayList<>();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		p1.addPoint();
+		p2.addPoint();
+
+		playersList.add(p1);
+		playersList.add(p2);
+		assertEquals("0-0, 1-1", Game.getTieBreakerScore(playersList));
+	}
 
 	
 }
