@@ -66,5 +66,25 @@ public class GameTest {
 		playersList.add(p2);
 		assertEquals("0-0, Advantage p2", Game.getScore(playersList));
 	}
+	
+	@Test
+	public void testNormalScoreWinOneGame() {
+		List<Player> playersList = new ArrayList<>();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		p1.addPoint();
+		p1.addPoint();
+		p1.addPoint();
+
+		p2.addPoint();
+		p2.addPoint();
+		p2.addPoint();
+		p2.addPoint();
+		p2.addPoint();
+
+		playersList.add(p1);
+		playersList.add(p2);
+		assertEquals("1-0", Game.getScore(playersList));
+	}
 
 }

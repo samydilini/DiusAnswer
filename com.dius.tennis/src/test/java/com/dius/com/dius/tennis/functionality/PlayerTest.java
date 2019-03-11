@@ -15,8 +15,15 @@ public class PlayerTest {
 	}
 
 	@Test
-	public void testGameCount() throws Exception {
+	public void testGameCount() {
 		Player player = new Player("p2");
 		assertEquals(0, player.getGameCount());
+	}
+
+	@Test
+	public void testIncrementGameCount() throws Exception {
+		Player player = new Player("p2");
+		player.incremetGameCount();
+		assertEquals(1, player.getGameCount());
 	}
 }
