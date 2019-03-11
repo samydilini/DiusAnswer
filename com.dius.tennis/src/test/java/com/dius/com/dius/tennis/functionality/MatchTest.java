@@ -146,6 +146,29 @@ public class MatchTest {
 		Player winner = match.pointWonBy("player 1");
 		assertEquals("player 1", winner.getName());
 	}
+	
+	@Test
+	public void testSetTieBreak() throws Exception {
+		Match match = new Match("player 1", "player 2");
+		match = player1WinGame(match);
+		match = player1WinGame(match);
+		match = player1WinGame(match);
+		match = player1WinGame(match);
+		match = player1WinGame(match);
+
+		match = player2WinGame(match);
+		match = player2WinGame(match);
+		match = player2WinGame(match);
+		match = player2WinGame(match);
+		match = player2WinGame(match);
+		
+		match = player1WinGame(match);
+		match = player2WinGame(match);
+		match = player1WinGame(match);
+		assertTrue(match.isTieBreaker());
+		
+
+	}
 
 	private Match player2WinGame(Match match) {
 		for (int i = 0; i <= 2; i++) {
