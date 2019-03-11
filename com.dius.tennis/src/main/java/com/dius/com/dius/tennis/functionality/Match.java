@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-
 public class Match {
 	private Map<String, Player> players = new HashMap<>();
 
@@ -20,9 +19,14 @@ public class Match {
 		players.get(player).addPoint();
 
 	}
-	
+
 	public String score() {
-		String scoreString="";
+		List<Player> playersList = new ArrayList<>();
+		playersList = players.values().stream().map(p -> p)
+				.collect(Collectors.toList());
+		Collections.reverse(playersList);
+		String scoreString = Game.getScore(playersList);
+
 		return scoreString;
 	}
 }
