@@ -10,8 +10,18 @@ public class Game {
 		Player player2 = playersList.get(1);
 		int player1GameCount = player1.getGameCount();
 		int player2GameCount = player2.getGameCount();
-		return player1GameCount + "-" + player2GameCount + ", "
-				+ normalGameScore[player1.getPoint()] + "-"
-				+ normalGameScore[player2.getPoint()];
+
+		int player1Points = player1.getPoint();
+		int player2Points = player2.getPoint();
+
+		String scoreString = "";
+		if (player1Points >= 3 && player2Points >= 3
+				&& (player1Points == player2Points)) {
+			scoreString = "Deuce";
+		} else {
+			scoreString = normalGameScore[player1Points] + "-"
+					+ normalGameScore[player2Points];
+		}
+		return player1GameCount + "-" + player2GameCount + ", " + scoreString;
 	}
 }
