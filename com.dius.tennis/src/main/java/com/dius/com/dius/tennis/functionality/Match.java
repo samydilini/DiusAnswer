@@ -11,8 +11,8 @@ public class Match {
 	private Map<String, Player> players = new HashMap<>();
 
 	public Match(String player1, String player2) {
-		players.put(player1, new Player());
-		players.put(player2, new Player());
+		players.put(player1, new Player(player1));
+		players.put(player2, new Player(player2));
 	}
 
 	public void pointWonBy(String player) {
@@ -26,7 +26,6 @@ public class Match {
 				.collect(Collectors.toList());
 		Collections.reverse(playersList);
 		String scoreString = Game.getScore(playersList);
-
 		return scoreString;
 	}
 }

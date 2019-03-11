@@ -12,16 +12,16 @@ public class GameTest {
 	@Test
 	public void testNormalScoreZeroZero() {
 		List<Player> playersList = new ArrayList<>();
-		playersList.add(new Player());
-		playersList.add(new Player());
+		playersList.add(new Player("p1"));
+		playersList.add(new Player("p2"));
 		assertEquals("0-0, 0-0", Game.getScore(playersList));
 	}
-	
+
 	@Test
 	public void testNormalScoreOneOne() {
 		List<Player> playersList = new ArrayList<>();
-		Player p1 = new Player();
-		Player p2 = new Player();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
 		p1.addPoint();
 		p2.addPoint();
 
@@ -29,15 +29,15 @@ public class GameTest {
 		playersList.add(p2);
 		assertEquals("0-0, 15-15", Game.getScore(playersList));
 	}
-	
+
 	public void testNormalScoreDuce() {
 		List<Player> playersList = new ArrayList<>();
-		Player p1 = new Player();
-		Player p2 = new Player();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
 		p1.addPoint();
 		p1.addPoint();
 		p1.addPoint();
-		
+
 		p2.addPoint();
 		p2.addPoint();
 		p2.addPoint();
