@@ -42,4 +42,24 @@ public class MatchTest {
 		// this will return "0-0, Deuce"
 		assertEquals("0-0, Deuce", match.score());
 	}
+
+	@Test
+	public void testAdvantage() throws Exception {
+		Match match = new Match("player 1", "player 2");
+		match.pointWonBy("player 1");
+		match.pointWonBy("player 2");
+		match.score();
+
+		match.pointWonBy("player 1");
+		match.pointWonBy("player 1");
+		match.score();
+
+		match.pointWonBy("player 2");
+		match.pointWonBy("player 2");
+		match.score();
+
+		match.pointWonBy("player 1");
+		// this will return "0-0, Advantage player 1"
+		assertEquals("0-0, Advantage player 1", match.score());
+	}
 }
