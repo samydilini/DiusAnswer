@@ -36,7 +36,9 @@ public class Game {
 				scoreString += "Advantage " + playerWithHighScore.getName();
 			} else {
 				scoreString = "";
-				playerWithHighScore.incrementGameCount();
+				playerWithHighScore.incremetGameCount();
+				player1.setPoint(0);
+				player2.setPoint(0);
 			}
 		} else {
 			scoreString += "Deuce";

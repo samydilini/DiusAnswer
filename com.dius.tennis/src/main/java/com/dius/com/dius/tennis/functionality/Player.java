@@ -2,6 +2,7 @@ package com.dius.com.dius.tennis.functionality;
 
 public class Player {
 	private int point;
+
 	private int gameCount;
 	private String name;
 
@@ -9,6 +10,9 @@ public class Player {
 		this.name = name;
 	}
 
+	public void setPoint(int point) {
+		this.point = point;
+	}
 	public String getName() {
 		return name;
 	}

@@ -84,7 +84,7 @@ public class GameTest {
 
 		playersList.add(p1);
 		playersList.add(p2);
-		assertEquals("1-0", Game.getScore(playersList));
+		assertEquals("0-1", Game.getScore(playersList));
 	}
 
 }
