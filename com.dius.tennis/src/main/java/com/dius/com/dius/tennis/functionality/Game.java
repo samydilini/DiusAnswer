@@ -22,13 +22,13 @@ public class Game {
 			scoreString = validateDuceState(player1, player2, player1Points,
 					player2Points);
 		} else {
-			scoreString +=(player1Points==0&&player2Points==0)?"": ", "+normalGameScore[player1Points] + "-"
-					+ normalGameScore[player2Points];
+			scoreString += (player1Points == 0 && player2Points == 0) ? ""
+					: ", " + normalGameScore[player1Points] + "-"
+							+ normalGameScore[player2Points];
 		}
-		int player1GameCount = player1.getGameCount();
-		int player2GameCount = player2.getGameCount();
-		String playingScoreString = player1GameCount + "-" + player2GameCount + scoreString;
-		return playingScoreString;
+		String gameCountString = player1.getGameCount() + "-"
+				+ player2.getGameCount();
+		return gameCountString + scoreString;
 	}
 
 	private static String validateDuceState(Player player1, Player player2,
@@ -53,7 +53,13 @@ public class Game {
 	}
 
 	public static String getTieBreakerScore(List<Player> playersList) {
-		// TODO Auto-generated method stub
-		return null;
+		Player player1 = playersList.get(0);
+		Player player2 = playersList.get(1);
+
+		String gameCountString = player1.getGameCount() + "-"
+				+ player2.getGameCount();
+		String scoreString = ", " + player1.getPoint() + "-"
+				+ player2.getPoint();
+		return gameCountString + scoreString;
 	}
 }
