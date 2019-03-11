@@ -9,6 +9,11 @@ public class Game {
 		Player player1 = playersList.get(0);
 		Player player2 = playersList.get(1);
 
+		String playingScoreString = scorePlayingAGame(player1, player2);
+		return playingScoreString;
+	}
+
+	private static String scorePlayingAGame(Player player1, Player player2) {
 		int player1Points = player1.getPoint();
 		int player2Points = player2.getPoint();
 
@@ -22,7 +27,8 @@ public class Game {
 		}
 		int player1GameCount = player1.getGameCount();
 		int player2GameCount = player2.getGameCount();
-		return player1GameCount + "-" + player2GameCount + scoreString;
+		String playingScoreString = player1GameCount + "-" + player2GameCount + scoreString;
+		return playingScoreString;
 	}
 
 	private static String validateDuceState(Player player1, Player player2,

@@ -1,6 +1,6 @@
 package com.dius.com.dius.tennis.functionality;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +66,7 @@ public class GameTest {
 		playersList.add(p2);
 		assertEquals("0-0, Advantage p2", Game.getScore(playersList));
 	}
-	
+
 	@Test
 	public void testNormalScoreWinOneGame() {
 		List<Player> playersList = new ArrayList<>();
@@ -87,4 +87,5 @@ public class GameTest {
 		assertEquals("0-1", Game.getScore(playersList));
 	}
 
+	
 }

@@ -17,7 +17,7 @@ public class Match {
 
 	public void pointWonBy(String player) {
 		players.get(player).addPoint();
-
+		
 	}
 
 	public String score() {
