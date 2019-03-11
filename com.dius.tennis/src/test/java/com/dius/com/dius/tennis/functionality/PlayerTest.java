@@ -21,7 +21,7 @@ public class PlayerTest {
 	}
 
 	@Test
-	public void testIncrementGameCount() throws Exception {
+	public void testIncrementGameCount() {
 		Player player = new Player("p2");
 		player.incremetGameCount();
 		assertEquals(1, player.getGameCount());

@@ -28,4 +28,9 @@ public class Player {
 	public int getGameCount() {
 		return gameCount;
 	}
+
+	public void incremetGameCount() {
+		gameCount++;
+
+	}
 }
