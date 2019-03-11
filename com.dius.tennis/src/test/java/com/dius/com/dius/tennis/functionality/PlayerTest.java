@@ -1,6 +1,6 @@
 package com.dius.com.dius.tennis.functionality;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -13,6 +13,10 @@ public class PlayerTest {
 		player.addPoint();
 		assertEquals(1, player.getPoint());
 	}
-	
 
+	@Test
+	public void testGameCount() throws Exception {
+		Player player = new Player();
+		assertEquals(0, player.getGameCount());
+	}
 }
