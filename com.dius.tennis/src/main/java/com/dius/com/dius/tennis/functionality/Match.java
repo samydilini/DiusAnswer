@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class Match {
 	private Map<String, Player> players = new HashMap<>();
+	private boolean tieBreaker = false;
 
 	public Match(String player1, String player2) {
 		players.put(player1, new Player(player1));
@@ -33,6 +34,9 @@ public class Match {
 			if (gameCountDiff >= 2) {
 				return currentPlayer;
 			}
+			if (currentPlayer.getGameCount() > 6 && gameCountDiff == 1) {
+				tieBreaker = true;
+			}
 		}
 		return null;
 	}
@@ -44,5 +48,9 @@ public class Match {
 		Collections.reverse(playersList);
 		String scoreString = Game.getScore(playersList);
 		return scoreString;
+	}
+
+	public boolean isTieBreaker() {
+		return tieBreaker;
 	}
 }
