@@ -30,6 +30,7 @@ public class GameTest {
 		assertEquals("0-0, 15-15", Game.getScore(playersList));
 	}
 
+	@Test
 	public void testNormalScoreDuce() {
 		List<Player> playersList = new ArrayList<>();
 		Player p1 = new Player("p1");
@@ -44,7 +45,26 @@ public class GameTest {
 
 		playersList.add(p1);
 		playersList.add(p2);
-		assertEquals("0-0, Duce", Game.getScore(playersList));
+		assertEquals("0-0, Deuce", Game.getScore(playersList));
+	}
+
+	@Test
+	public void testNormalScoreAdvantagePlayer() {
+		List<Player> playersList = new ArrayList<>();
+		Player p1 = new Player("p1");
+		Player p2 = new Player("p2");
+		p1.addPoint();
+		p1.addPoint();
+		p1.addPoint();
+
+		p2.addPoint();
+		p2.addPoint();
+		p2.addPoint();
+		p2.addPoint();
+
+		playersList.add(p1);
+		playersList.add(p2);
+		assertEquals("0-0, Advantage p2", Game.getScore(playersList));
 	}
 
 }

@@ -15,13 +15,25 @@ public class Game {
 		int player2Points = player2.getPoint();
 
 		String scoreString = "";
-		if (player1Points >= 3 && player2Points >= 3
-				&& (player1Points == player2Points)) {
-			scoreString = "Deuce";
+		if (player1Points >= 3 && player2Points >= 3) {
+			scoreString = validateDuceState(player1, player2, player1Points,
+					player2Points, scoreString);
 		} else {
 			scoreString = normalGameScore[player1Points] + "-"
 					+ normalGameScore[player2Points];
 		}
 		return player1GameCount + "-" + player2GameCount + ", " + scoreString;
+	}
+
+	private static String validateDuceState(Player player1, Player player2,
+			int player1Points, int player2Points, String scoreString) {
+		if (player1Points != player2Points) {
+			scoreString += "Advantage "
+					+ ((player1Points > player2Points) ? player1.getName()
+							: player2.getName());
+		} else {
+			scoreString = "Deuce";
+		}
+		return scoreString;
 	}
 }
