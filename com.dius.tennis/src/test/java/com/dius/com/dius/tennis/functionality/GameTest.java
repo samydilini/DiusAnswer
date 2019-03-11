@@ -14,7 +14,7 @@ public class GameTest {
 		List<Player> playersList = new ArrayList<>();
 		playersList.add(new Player("p1"));
 		playersList.add(new Player("p2"));
-		assertEquals("0-0, 0-0", Game.getScore(playersList));
+		assertEquals("0-0", Game.getScore(playersList));
 	}
 
 	@Test

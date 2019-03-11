@@ -112,7 +112,7 @@ public class MatchTest {
 
 		assertNull(match.pointWonBy("player 1"));
 		Player winner = match.pointWonBy("player 1");
-		assertEquals("player 1", winner);
+		assertEquals("player 1", winner.getName());
 	}
 
 	private Match player1WinGame(Match match) {

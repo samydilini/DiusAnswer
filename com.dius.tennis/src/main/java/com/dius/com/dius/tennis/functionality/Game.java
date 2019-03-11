@@ -17,12 +17,12 @@ public class Game {
 		int player1Points = player1.getPoint();
 		int player2Points = player2.getPoint();
 
-		String scoreString = ", ";
+		String scoreString = "";
 		if (player1Points >= 3 && player2Points >= 3) {
 			scoreString = validateDuceState(player1, player2, player1Points,
 					player2Points);
 		} else {
-			scoreString += normalGameScore[player1Points] + "-"
+			scoreString +=(player1Points==0&&player2Points==0)?"": ", "+normalGameScore[player1Points] + "-"
 					+ normalGameScore[player2Points];
 		}
 		int player1GameCount = player1.getGameCount();

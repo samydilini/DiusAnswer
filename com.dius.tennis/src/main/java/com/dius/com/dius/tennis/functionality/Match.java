@@ -15,9 +15,20 @@ public class Match {
 		players.put(player2, new Player(player2));
 	}
 
-	public void pointWonBy(String player) {
-		players.get(player).addPoint();
-		
+	public Player pointWonBy(String player) {
+		Player currentPlayer = players.get(player);
+		currentPlayer.addPoint();
+		score();
+		if (currentPlayer.getGameCount() >= 6) {
+			List<Player> playersList=players.values().stream().map(p -> p)
+					.collect(Collectors.toList());
+			int gameCountDiff = Math.abs(playersList.get(0).getGameCount()
+					- playersList.get(1).getGameCount());
+			if (gameCountDiff >= 2) {
+				return currentPlayer;
+			}
+		}
+		return null;
 	}
 
 	public String score() {
