@@ -37,4 +37,11 @@ public class Player {
 		gameCount++;
 
 	}
+
+	@Override
+	public String toString() {
+		return "Player [point=" + point + ", gameCount=" + gameCount
+				+ ", name=" + name + "]";
+	}
+	
 }

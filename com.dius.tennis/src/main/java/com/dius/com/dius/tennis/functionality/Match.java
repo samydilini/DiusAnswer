@@ -19,8 +19,14 @@ public class Match {
 		Player currentPlayer = players.get(player);
 		currentPlayer.addPoint();
 		score();
+		Player winner = null;
+		winner = getWinner(currentPlayer);
+		return winner;
+	}
+
+	private Player getWinner(Player currentPlayer) {
 		if (currentPlayer.getGameCount() >= 6) {
-			List<Player> playersList=players.values().stream().map(p -> p)
+			List<Player> playersList = players.values().stream().map(p -> p)
 					.collect(Collectors.toList());
 			int gameCountDiff = Math.abs(playersList.get(0).getGameCount()
 					- playersList.get(1).getGameCount());
